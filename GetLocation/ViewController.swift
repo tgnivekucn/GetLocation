@@ -44,7 +44,7 @@ extension ViewController: CLLocationManagerDelegate {
             statusString = "restricted"
             break
         }
-        if status != .notDetermined {
+        if status == .denied || status == .restricted {
             showCustomAlert()
         }
         print("didChangeAuthorization  status is: \(statusString)")
